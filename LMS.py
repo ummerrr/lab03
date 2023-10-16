@@ -31,6 +31,19 @@ class LMS:
         if username in self.users and self.users[username]==password:
             return True
         return False
+    def display(self):
+        for book in self.bookstore:
+            print(f"Book serial N0: {book.serialNo}     Book Name:{book.name}\n Book Author :{book.author}")
+    def checkout(self,serialno):
+        for book in self.bookstore:
+            if book.serialNo == serialno:
+                if bool.issuestatus == True:
+                    print("Book is already Issued")
+                else:
+                    book.issuestatus =True
+                    print("Book is issued to you")
+            
+
     def mainMenu(self):
         while True:
             print("Welcome to Ashraf LMS0\nUse Following commands to perform tasks.")
